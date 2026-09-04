@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Message Beyond the Classroom</title>
+<style>
+*{box-sizing:border-box} body{margin:0;font-family:Georgia,serif;background:radial-gradient(circle at top,#25204a,#090912 70%);color:#fff;min-height:100vh;overflow-x:hidden}
+.wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{width:min(650px,100%);text-align:center;padding:38px 24px;border:1px solid rgba(255,255,255,.18);border-radius:28px;background:rgba(255,255,255,.07);backdrop-filter:blur(12px);box-shadow:0 20px 70px rgba(0,0,0,.45)}
+.badge{letter-spacing:3px;font-size:12px;opacity:.75}.lock{font-size:58px;margin:20px 0 10px}.title{font-size:clamp(30px,8vw,55px);margin:8px 0;background:linear-gradient(90deg,#fff,#ffd88a,#fff);-webkit-background-clip:text;color:transparent}
+.sub{opacity:.8;font-size:17px;line-height:1.6}.btn{border:0;border-radius:999px;padding:14px 25px;font-size:16px;background:#fff;color:#171321;cursor:pointer;font-weight:bold;margin-top:18px;box-shadow:0 8px 25px rgba(255,255,255,.15)}
+.hidden{display:none}.letter{animation:rise 1s ease}.line{font-size:20px;line-height:1.65;margin:14px 0}.highlight{font-size:30px;font-weight:bold;color:#ffd88a}.thanks{font-size:42px;margin:25px 0 10px}.dots{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:25px auto;max-width:280px}.dot{width:10px;height:10px;border-radius:50%;background:#ffd88a;animation:glow 1.4s infinite alternate}.footer{margin-top:30px;font-size:14px;opacity:.65}
+@keyframes rise{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+@keyframes glow{to{transform:scale(1.8);opacity:.3}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+<div class="badge">A MESSAGE BEYOND THE CLASSROOM</div>
+<div id="intro">
+<div class="lock">🔒</div>
+<h1 class="title">Something Special<br>Is Waiting For You</h1>
+<p class="sub">This little surprise is from all of us who are lucky enough to learn from you.</p>
+<button class="btn" onclick="openLetter()">Tap to Open 💌</button>
+</div>
+<div id="letter" class="hidden letter">
+<div style="font-size:45px">✉️</div>
+<p class="line">Dear Teachers,</p>
+<p class="line">You don't just teach lessons…</p>
+<p class="highlight">You create futures. 🌟</p>
+<div class="dots" id="dots"></div>
+<p class="line">📚 For every lesson you taught<br>
+💡 For every doubt you cleared<br>
+🤝 For every student you encouraged<br>
+❤️ For every moment you believed in us</p>
+<h2 class="thanks">🌸 HAPPY TEACHERS’ DAY 🌸</h2>
+<p class="sub">Thank you for being a beautiful part of our journey.</p>
+<p class="highlight" style="font-size:22px">30 Teachers • One Heartfelt Thank You</p>
+<p class="footer">Made with Respect & Gratitude<br>by Your Students ❤️</p>
+</div>
+</div>
+</div>
+<script>
+function openLetter(){
+ document.getElementById('intro').classList.add('hidden');
+ document.getElementById('letter').classList.remove('hidden');
+ const d=document.getElementById('dots');
+ for(let i=0;i<30;i++){let x=document.createElement('span');x.className='dot';x.style.animationDelay=(i*0.05)+'s';d.appendChild(x);}
+}
+</script>
+</body>
+</html>
